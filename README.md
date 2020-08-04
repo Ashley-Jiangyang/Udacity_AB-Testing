@@ -1,6 +1,9 @@
 # A/B Testing Walkthrough - Udacity A/B Testing Final Project
+Refer this [Jupyter notebok](https://github.com/Ashley-Jiangyang/Udacity_ABTesting/blob/master/Udacity_AB_Testing_Final_Project.ipynb) for more detail.
 
-## Experiment Design
+## Key Results
+
+### Experiment Design
 
 __Metirc Choice__
 | Metrics | Dmin | Metircs Type |
