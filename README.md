@@ -27,8 +27,8 @@ __Measuring Variability__
 __Sample vs. Power__
 | Metrics | Dmin | Beseline Conversion | Alpha | Beta | Sample Size(2) | Pageviews Required |
 | :---: | :---: | :---: |:---:| :---: | :---: | :---: |
-| 20.625% | 1% | 5% | 20% | 51,760 enrollments | 645,875 |
-| 10.9313% | 0.75% | 5% | 20% | 54,826 enrollments | 685,325|
+| Gross Conversion | 20.625% | 1% | 5% | 20% | 51,760 enrollments | 645,875 |
+| Net Conversion| 10.9313% | 0.75% | 5% | 20% | 54,826 enrollments | 685,325|
 
 __Duration vs. Exposure__
 | Traffic | Duration | Sample Size |
