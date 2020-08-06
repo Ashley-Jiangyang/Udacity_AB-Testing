@@ -31,6 +31,11 @@ __Measuring Variability__: Standard deviation of a metric is what we use to acce
 | Retention | 0.0549 | 
 | Net Conversion| 0.0156 | 
 
+### Launch Criteria
+
+1. Gross conversion is both statistically and practically significant lower in the experiment group.
+2. Net conversion is not lower than our practical limit (-0.75%).
+
 ### Experiment Design - Sizing 
 
 __Samples vs. Power__ : The pageviews we will need to power the experiment appropriately.
@@ -67,5 +72,28 @@ __Results Analysis - Sign Tests__: For each of our evaluation metrics, do a sign
 |Gross Conversion|	0.0026	|Yes|
 |Net Conversion	|0.6776	|No|
 
-## Follow-Up Experiment: How to Reduce Early Cancellations
+_Summary__: 
 
+We will recommend launching the new feature when both evaluation metrics match our criteria, our chance for false positive is already low. Using Bonferroni would further reduce the chance of false positive. However, this is too conservative so I will not use Bonferroni correction in our case, remember we only have two metrics here - if we would need only one of them to meet our criteria to launch, we would face the risk that a single metric could meet criteria by pure chance, by mistake. Bonferroni correction would decrease type I error (false positive). However, since we would need all the metrics to meet our criteria to launch, we would face the risk that a single metric could not meet criteria by pure chance, by mistake. We call that type II error (false negative). In this case, Bonferroni correction might even make it worse, since it potentially increased the type II error or made no difference. Therefore, we won't use Bonferroni correction in this problem. The effect size test and sign test result met.
+
+
+__Recommendation__:
+The experiment wanted to find whether the change filtered out the students left the free trial without enough time to commit the course, while not decrease those who enrolled in the free trial and can stick to the end. The Gross conversion showed us numbers of students try free trial decreased as we expected, but the Net conversion showed us numbers of students actual paid potentially decreased whereas we hope it wouldn't change. We can find the net conversion confidence interval lower boundary is -0.0116 is below the lower practical significance as -0.0075. Due to these, my recommendation is not to launch the experiments.
+
+
+## Follow-Up Experiment: How to Reduce Early Cancellations
+The feature was designed to explore the time commitment to filter out that students likely to become frustrated - it focuses on time commitment rather than other reasons that students can get frustrated and cancel early. Even if students were able to spend the time as required, they still can get frustrated, maybe they don't meet the pre-request to follow up with the course - adding a checklist of the pre-requisite skills in the course may be informative. The follow-up experiment will leverage the infrastructure and data pipeline of the original experiment and be set up in the same way. If the students' answers both meet the time and pre-request skills, they will be directed to the free-trail enrollment, otherwise, they are encouraged to access the course for free. 
+
+A variety of approaches could be used to intervene post-enrollment but pre-payment and could be deployed concurrently with pre-enrollment intervention. An ideal approach would be one that minimizes the use of additional coaching resources to best meet the original intent of the intervention. An effective approach may be to employ peer coaching/guidance using team formation. If a student has a team of other students which they could consult, discuss coursework and frustrations with, and be accountable to, they may be more likely to stick out the growing pains and stay for the long term. The experiment would function in the following manner.
+
+__Setup__: Upon enrollment, students will either be randomly assigned to a control group in which they are not funneled into a team or an experimental group in which they are.
+
+__Null Hypothesis__: Participation in a team will not increase the number of students enrolled beyond the 14 days free trial period by a significant amount.
+
+__Unit of Diversion__: The unit of diversion will be user-id as the change takes place after a student creates an account and enrolls in a course.
+
+__Invariant Metrics__: The invariant metric will be user-id since an equal distribution between experiment and control would be expected as a property of the setup.
+
+__Evaluation Metrics__: The evaluation metric will be Retention. A statistically and practically significant increase in Retention would indicate that the change is successful.
+
+If a statistically and practically significant positive change in Retention is observed, assuming an acceptable impact on overall Udacity resources (setting up and maintaining teams will require resource use), the experiment will be launched.
