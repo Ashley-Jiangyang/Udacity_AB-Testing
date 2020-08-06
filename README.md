@@ -72,7 +72,7 @@ __Results Analysis - Sign Tests__: For each of our evaluation metrics, do a sign
 |Gross Conversion|	0.0026	|Yes|
 |Net Conversion	|0.6776	|No|
 
-_Summary__: 
+__Summary__: 
 
 We will recommend launching the new feature when both evaluation metrics match our criteria, our chance for false positive is already low. Using Bonferroni would further reduce the chance of false positive. However, this is too conservative so I will not use Bonferroni correction in our case, remember we only have two metrics here - if we would need only one of them to meet our criteria to launch, we would face the risk that a single metric could meet criteria by pure chance, by mistake. Bonferroni correction would decrease type I error (false positive). However, since we would need all the metrics to meet our criteria to launch, we would face the risk that a single metric could not meet criteria by pure chance, by mistake. We call that type II error (false negative). In this case, Bonferroni correction might even make it worse, since it potentially increased the type II error or made no difference. Therefore, we won't use Bonferroni correction in this problem. The effect size test and sign test result met.
 
