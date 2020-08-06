@@ -96,4 +96,4 @@ __Invariant Metrics__: The invariant metric will be user-id since an equal distr
 
 __Evaluation Metrics__: The evaluation metric will be Retention. A statistically and practically significant increase in Retention would indicate that the change is successful.
 
-If a statistically and practically significant positive change in Retention is observed, assuming an acceptable impact on overall Udacity resources (setting up and maintaining teams will require resource use), the experiment will be launched.
+If a statistically and practically significant positive change in Retention is observed, assuming an acceptable impact on overall Udacity resources (setting up and maintaining teams will require resource use), the feature will be launched.
